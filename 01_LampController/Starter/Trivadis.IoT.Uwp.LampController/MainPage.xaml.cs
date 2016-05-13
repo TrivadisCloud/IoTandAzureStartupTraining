@@ -20,6 +20,8 @@ namespace Trivadis.IoT.Uwp.LampController
 
       if (gpio != null)
       {
+        // TODO: Initialize and setup the red led as well (on GPIO-Pin 27)
+
         _greenLEDPin = gpio.OpenPin(17);
 
         _greenLEDPin.SetDriveMode(GpioPinDriveMode.Output);
