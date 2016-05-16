@@ -1,2 +1,2 @@
 # IoTandAzureStartupTraining
-Contains project for Trivadis IoT &amp; Azure Startup Training
+Contains starter projects for the Trivadis IoT &amp; Azure Startup Training
