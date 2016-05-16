@@ -17,18 +17,29 @@ namespace Trivadis.IoT.Console.EventHubClientReceiver
       System.Console.WriteLine(connectionString);
 
       var client = EventHubClient.CreateFromConnectionString(connectionString);
-      var consumerGroup = client.GetDefaultConsumerGroup();
-      var receiver = consumerGroup.CreateReceiver(client.GetRuntimeInformation().PartitionIds[0]);
 
-      bool receive = true;
-      string offset;
-      while (receive)
+      EventHubConsumerGroup consumerGroup = client.GetDefaultConsumerGroup();
+      string[] partitionIds = client.GetRuntimeInformation().PartitionIds;
+
+      List<EventHubReceiver> receivers = partitionIds.Select(partitionId => consumerGroup.CreateReceiver(partitionId)).ToList();
+
+      var tasks = new List<Task>();
+      foreach (var receiver in receivers)
       {
-        var message = receiver.Receive();
-        offset = message.Offset;
-        string body = Encoding.UTF8.GetString(message.GetBytes());
-        System.Console.WriteLine(String.Format("Received message offset: {0} \nbody: {1}", offset, body));
+        var task = Task.Run(() =>
+         {
+           string offset;
+           while (true)
+           {
+             var message = receiver.Receive();
+             offset = message.Offset;
+             string body = Encoding.UTF8.GetString(message.GetBytes());
+             System.Console.WriteLine(String.Format("Received message offset: {0} \nbody: {1}", offset, body));
+           }
+         });
+        tasks.Add(task);
       }
+      Task.WaitAll(tasks.ToArray());
     }
   }
 }
