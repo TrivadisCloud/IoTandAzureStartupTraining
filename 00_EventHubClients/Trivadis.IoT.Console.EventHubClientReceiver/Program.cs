@@ -21,7 +21,9 @@ namespace Trivadis.IoT.Console.EventHubClientReceiver
       EventHubConsumerGroup consumerGroup = client.GetDefaultConsumerGroup();
       string[] partitionIds = client.GetRuntimeInformation().PartitionIds;
 
-      List<EventHubReceiver> receivers = partitionIds.Select(partitionId => consumerGroup.CreateReceiver(partitionId)).ToList();
+      List<EventHubReceiver> receivers = 
+        partitionIds.Select(
+          partitionId => consumerGroup.CreateReceiver(partitionId)).ToList();
 
       var tasks = new List<Task>();
       foreach (var receiver in receivers)
