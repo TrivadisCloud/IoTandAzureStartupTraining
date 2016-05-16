@@ -14,13 +14,14 @@ namespace Trivadis.IoT.WPF.EventHubClientSimulator.DataAccess
       try
       {
         EventHubClient client = EventHubClient.CreateFromConnectionString(connectionString);
-        EventHubSender sender = client.CreateSender("MyDevice");
 
         string sensorDataJson = JsonConvert.SerializeObject(sensorData);
 
         var eventData = new EventData(Encoding.UTF8.GetBytes(sensorDataJson));
 
-        await sender.SendAsync(eventData);
+        // NOTE: For multipe events there's also a SendBatchAsync-event
+        await client.SendAsync(eventData);
+        
         return new PublishResult { IsSuccess = true };
       }
       catch(Exception ex)

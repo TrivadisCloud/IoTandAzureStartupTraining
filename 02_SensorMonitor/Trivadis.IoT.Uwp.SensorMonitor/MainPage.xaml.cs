@@ -101,7 +101,7 @@ namespace Trivadis.IoT.Uwp.SensorMonitor
       await Task.Delay(500);
 
       // Read the DHT22 sensor data
-      var reading = await _dht22.GetReadingAsync().AsTask();
+      var reading = await _dht22.GetReadingAsync(1).AsTask();
 
       if (reading.IsValid)
       {
