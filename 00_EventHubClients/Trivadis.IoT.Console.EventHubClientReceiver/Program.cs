@@ -38,10 +38,10 @@ namespace Trivadis.IoT.Console.EventHubClientReceiver
              {
                offset = message.Offset;
                string body = Encoding.UTF8.GetString(message.GetBytes());
-               System.Console.WriteLine(String.Format("Received message offset: {0} \nbody: {1}", offset, body));
+               System.Console.WriteLine($"Received message offset: {offset} \nbody: {body}");
              }
            }
-         });
+         }); 
         tasks.Add(task);
       }
       Task.WaitAll(tasks.ToArray());
