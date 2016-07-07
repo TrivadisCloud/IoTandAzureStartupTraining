@@ -16,6 +16,7 @@ namespace Trivadis.IoT.WPF.EventHubClientSimulator.ViewModel
     private string _lastTempSendStatus;
     private string _connectionString;
     private string _lastHumSendStatus;
+    private string _deviceName;
 
     public MainViewModel(IEventPublisher eventPublisher)
     {
@@ -87,6 +88,15 @@ namespace Trivadis.IoT.WPF.EventHubClientSimulator.ViewModel
       }
     }
 
+    public string DeviceName
+    {
+      get { return _deviceName; }
+      set
+      {
+        _deviceName = value;
+        OnPropertyChanged();
+      }
+    }
 
     public string ConnectionString
     {
@@ -105,14 +115,13 @@ namespace Trivadis.IoT.WPF.EventHubClientSimulator.ViewModel
       {
         return;
       }
-
-      var device = "myDevice";
+      
 
       var resultTemp = await _eventPublisher.PublishAsync(
            ConnectionString,
            new SensorData
            {
-             DeviceName = device,
+             DeviceName = DeviceName,
              ReadTime = DateTime.Now,
              SensorType = "Temp",
              Value = Temperature
@@ -123,7 +132,7 @@ namespace Trivadis.IoT.WPF.EventHubClientSimulator.ViewModel
            ConnectionString,
            new SensorData
            {
-             DeviceName = device,
+             DeviceName = DeviceName,
              ReadTime = DateTime.Now,
              SensorType = "Hum",
              Value = Humidity

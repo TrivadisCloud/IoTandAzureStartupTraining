@@ -11,7 +11,6 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
       <ColumnDefinition/>
@@ -25,14 +24,16 @@
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
       <TextBlock Text="Event Hub Connection String"/>
       <TextBox Grid.Column="1" Height="50" Margin="5" Text="{Binding ConnectionString,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                TextWrapping="Wrap"/>
-
-      <CheckBox Grid.Row="1" Grid.Column="1" Margin="5" IsChecked="{Binding IsSendingDataEnabled,Mode=TwoWay}" Content="Is sending data enabled" VerticalAlignment="Center"/>
+      <TextBlock Text="Device Name" Grid.Row="1"/>
+      <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Text="{Binding DeviceName,UpdateSourceTrigger=PropertyChanged}"/>
+      <CheckBox Grid.Row="2" Grid.Column="1" Margin="5" IsChecked="{Binding IsSendingDataEnabled,Mode=TwoWay}" Content="Is sending data enabled" VerticalAlignment="Center"/>
     </Grid>
-    <GroupBox Grid.Row="3" Header="Temperature" Margin="10" >
+    <GroupBox Grid.Row="2" Header="Temperature" Margin="10" >
       <StackPanel>
         <TextBlock  Margin="5">Current value: <Run Text="{Binding Temperature,StringFormat=0.0}" /></TextBlock>
         <Slider Value="{Binding Temperature,Mode=TwoWay}"  Maximum="100" Margin="5"/>
@@ -40,7 +41,7 @@
         <TextBox IsReadOnly="True" Height="100" TextWrapping="Wrap" Margin="5" Text="{Binding LastTempSendStatus,Mode=OneWay}"/>
       </StackPanel>
     </GroupBox>
-    <GroupBox Grid.Row="3" Grid.Column="1" Header="Humidity" Margin="10">
+    <GroupBox Grid.Row="2" Grid.Column="1" Header="Humidity" Margin="10">
       <StackPanel>
         <TextBlock  Margin="5">Current value: <Run Text="{Binding Humidity,StringFormat=0.0}" /></TextBlock>
         <Slider Value="{Binding Humidity,Mode=TwoWay}"  Maximum="100" Margin="5"/>

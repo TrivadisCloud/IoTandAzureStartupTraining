@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivadis.IoT.WPF.EventHubClientSender", "Trivadis.IoT.WPF.EventHubClientSender\Trivadis.IoT.WPF.EventHubClientSender.csproj", "{B2D7364E-E247-472D-BF16-71495CCD3AE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivadis.IoT.Console.EventHubClientReceiver", "Trivadis.IoT.Console.EventHubClientReceiver\Trivadis.IoT.Console.EventHubClientReceiver.csproj", "{46987956-BF85-4276-959A-8C3CCB3348EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivadis.IoT.WPF.EventHubClientReceiver", "Trivadis.IoT.WPF.EventHubClientReceiver\Trivadis.IoT.WPF.EventHubClientReceiver.csproj", "{F3597ACA-35D6-4E8B-9207-6A4D0F8BD66A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{46987956-BF85-4276-959A-8C3CCB3348EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46987956-BF85-4276-959A-8C3CCB3348EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46987956-BF85-4276-959A-8C3CCB3348EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3597ACA-35D6-4E8B-9207-6A4D0F8BD66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3597ACA-35D6-4E8B-9207-6A4D0F8BD66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3597ACA-35D6-4E8B-9207-6A4D0F8BD66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3597ACA-35D6-4E8B-9207-6A4D0F8BD66A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

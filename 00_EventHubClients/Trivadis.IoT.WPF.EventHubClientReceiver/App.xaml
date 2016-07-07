@@ -1,0 +1,9 @@
+﻿<Application x:Class="Trivadis.IoT.WPF.EventHubClientReceiver.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Trivadis.IoT.WPF.EventHubClientReceiver"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
