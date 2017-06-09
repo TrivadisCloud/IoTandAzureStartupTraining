@@ -1,0 +1,26 @@
+[
+	{
+	   "DeviceName":"TestDevice",
+	   "ReadTime":"2016-11-22T14:40:00:00",
+	   "SensorType":"Temp"
+	   ,"Value":0.0
+	},
+	{
+	   "DeviceName":"TestDevice",
+	   "ReadTime":"2016-11-22T14:40:01:00",
+	   "SensorType":"Temp"
+	   ,"Value":5.0
+	},
+	{
+	   "DeviceName":"TestDevice",
+	   "ReadTime":"2016-11-22T14:40:02:00",
+	   "SensorType":"Temp"
+	   ,"Value":10.0
+	},
+	{
+	   "DeviceName":"TestDevice",
+	   "ReadTime":"2016-11-22T14:40:03:00",
+	   "SensorType":"Temp"
+	   ,"Value":15.0
+	}
+]	

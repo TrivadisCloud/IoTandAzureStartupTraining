@@ -1,0 +1,7 @@
+SELECT
+    DeviceName,max(value),count(*)
+INTO
+    [SDFPBOutput]
+FROM
+    [SDFEventHub99] Timestamp by Readtime
+    group by devicename, TumblingWindow(Duration(second, 3), Offset(millisecond, -1))
